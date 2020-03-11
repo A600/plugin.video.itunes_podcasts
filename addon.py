@@ -41,12 +41,10 @@ STRINGS = {
 
 @plugin.route('/')
 def show_root():
-    content_type = plugin.request.args.get('content_type')
-    if not content_type:
-        url = plugin.url_for(endpoint='show_content_types')
-        return plugin.redirect(url)
-    if isinstance(content_type, (list, tuple)):
-        content_type = content_type[0]
+    if 'audio' in xbmc.getInfoLabel('Container.FolderPath'):
+        content_type = 'audio'
+    else:
+        content_type = 'video'
     items = (
         {'label': _('browse_by_genre'), 'path': plugin.url_for(
             endpoint='show_genres',
