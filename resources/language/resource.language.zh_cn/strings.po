@@ -1,0 +1,82 @@
+# Kodi Media Center language file
+# Addon Name: Apple iTunes Podcasts
+# Addon id: plugin.video.itunes_podcasts
+# Addon Provider: Tristan Fischer (sphere@dersphere.de)
+msgid ""
+msgstr ""
+"Project-Id-Version: Kodi Addons\n"
+"Report-Msgid-Bugs-To: https://forum.kodi.tv/\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Kodi Translation Team\n"
+"Language-Team: Team-Kodi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "#30000"
+msgid "All genres"
+msgstr "所有类型"
+
+msgctxt "#30002"
+msgid "Browse by genre"
+msgstr "按类别浏览"
+
+msgctxt "#30003"
+msgid "My Podcasts"
+msgstr "我的播客"
+
+msgctxt "#30004"
+msgid "Search"
+msgstr "查找"
+
+msgctxt "#30005"
+msgid "Video Podcasts"
+msgstr "视频播客"
+
+msgctxt "#30006"
+msgid "Audio Podcasts"
+msgstr "音频播客"
+
+msgctxt "#30007"
+msgid "No Video/Music found!"
+msgstr "未找到视频/音乐！"
+
+msgctxt "#30010"
+msgid "Add to "My Podcasts""
+msgstr "回放“我的播客”"
+
+msgctxt "#30011"
+msgid "Remove from "My Podcasts""
+msgstr "从“我的播客”删除"
+
+msgctxt "#30100"
+msgid "Podcasts: Force ViewMode to Thumbnail"
+msgstr "播客：视图模式强制为“缩略图”"
+
+msgctxt "#30101"
+msgid "Podcast-Items: Force ViewMode to Thumbnail"
+msgstr "播客项：视图模式强制为“缩略图”"
+
+msgctxt "#30102"
+msgid "Itunes Country and Language"
+msgstr "Itunes国家和语言"
+
+msgctxt "#30103"
+msgid "Podcasts to show in list (max 300)"
+msgstr "列表显示播客（最多300）"
+
+msgctxt "#30104"
+msgid "Podcasts to show in search (max 200)"
+msgstr "搜索显示播放（最多200）"
+
+msgctxt "#30105"
+msgid "Show Subgenres"
+msgstr "显示子类"
+
+msgctxt "#30200"
+msgid "Network Error"
+msgstr "网络错误"
+

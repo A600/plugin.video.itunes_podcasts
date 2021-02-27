@@ -18,8 +18,8 @@
 #
 
 import simplejson as json
-from urllib import urlencode, quote_plus
-from urllib2 import urlopen, Request, HTTPError, URLError
+from urllib.parse import quote_plus
+from urllib.request import urlopen, Request, HTTPError, URLError
 
 import feedparser
 
@@ -100,7 +100,7 @@ class ItunesPodcastApi():
 
     def _parse_genre(self, node, flat, parent=None):
         genres = []
-        for item in node.itervalues():
+        for item in node.values():
             # Don't add "Podcasts - " to all items
             if parent and parent != 'Podcasts':
                 name = '%s - %s' % (parent, item['name'])
@@ -262,9 +262,9 @@ class ItunesPodcastApi():
         req.add_header('X-Apple-Store-Front', self.storefront_id)
         try:
             response = urlopen(req).read()
-        except HTTPError, error:
+        except HTTPError as error:
             raise NetworkError('HTTPError: %s' % error)
-        except URLError, error:
+        except URLError as error:
             raise NetworkError('URLError: %s' % error)
         return response
 
@@ -274,17 +274,17 @@ def test():
     genres = api.get_genres(flat=True)
     assert genres
     for genre in genres[0:4]:
-        print genre['name']
+        print (genre['name'])
         for content_type in CONTENT_TYPES:
             podcasts = api.get_podcasts(genre['id'], content_type=content_type)
             assert podcasts
             for p in podcasts[0:4]:
                 pid = p['id']
-                print pid
+                print (pid)
                 items = api.get_podcast_items(pid)
                 assert items
                 for i in items[0:4]:
-                    print i['item_url']
+                    print (i['item_url'])
             assert api.get_single_podcast(pid)
             assert api.search_podcast('test')
 
