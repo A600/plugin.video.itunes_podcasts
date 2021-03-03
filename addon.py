@@ -41,10 +41,13 @@ STRINGS = {
 
 @plugin.route('/')
 def show_root():
-    if 'audio' in xbmc.getInfoLabel('Container.FolderPath'):
-        content_type = 'audio'
-    else:
-        content_type = 'video'
+    content_type = plugin.request.args.get('content_type', None)
+    if not content_type:
+        url = plugin.url_for(endpoint='show_content_types')
+        return plugin.redirect(url)
+    if isinstance(content_type, (list, tuple)):
+        content_type = content_type[0]
+
     items = (
         {'label': _('browse_by_genre'), 'path': plugin.url_for(
             endpoint='show_genres',
@@ -177,7 +180,7 @@ def __add_podcasts(content_type, podcasts):
         if not podcast_id in my_podcasts_ids:
             context_menu = [(
                 _('add_to_my_podcasts'),
-                'XBMC.RunPlugin(%s)' % plugin.url_for(
+                'RunPlugin(%s)' % plugin.url_for(
                     endpoint='add_to_my_podcasts',
                     content_type=content_type,
                     podcast_id=podcast_id
@@ -186,7 +189,7 @@ def __add_podcasts(content_type, podcasts):
         else:
             context_menu = [(
                 _('remove_from_my_podcasts'),
-                'XBMC.RunPlugin(%s)' % plugin.url_for(
+                'RunPlugin(%s)' % plugin.url_for(
                     endpoint='del_from_my_podcasts',
                     content_type=content_type,
                     podcast_id=podcast_id

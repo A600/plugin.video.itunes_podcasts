@@ -80,3 +80,6 @@ msgctxt "#30200"
 msgid "Network Error"
 msgstr ""
 
+msgctxt "#30201"
+msgid "General"
+msgstr ""
